@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 
 public class Song {
 
@@ -36,8 +39,15 @@ public class Song {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException{
+
+
+        PrintStream output =new PrintStream(new File("sangtekst.txt"));
+        System.setOut(output);
         Song song = new Song();
         song.printSong();
+
+
     }
+
 }
